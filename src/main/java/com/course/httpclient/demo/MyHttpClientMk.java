@@ -20,6 +20,7 @@ public class MyHttpClientMk {
     private String url;
     private ResourceBundle bundle;
     private String token;
+    private String categoryId;
 
 
     @BeforeTest
@@ -28,12 +29,12 @@ public class MyHttpClientMk {
         url = bundle.getString("mk.url");
     }
 
-    /*
+    /**
      * @description 展业中心，登陆接口
      * @author BingLi
      * @version 1.0
      * @date 2019-12-10
-    * */
+     */
     @Test
     public void testLogin() throws IOException {
 
@@ -58,7 +59,7 @@ public class MyHttpClientMk {
 
         HttpResponse response = client.execute(post);
         String result = EntityUtils.toString(response.getEntity(),"utf-8");
-        System.out.println(result);
+        System.out.println("展业中心登陆接口 >>> "+result);
 
         JSONObject resultJson = new JSONObject(result);
         String code = resultJson.getString("code");
@@ -68,7 +69,7 @@ public class MyHttpClientMk {
 
     }
 
-    /*
+    /**
     *
     * @description 展业中心，精品海报，查询海报分类列表
     * @author BingLi
@@ -90,7 +91,7 @@ public class MyHttpClientMk {
 
         HttpResponse response = client.execute(get);
         String result = EntityUtils.toString(response.getEntity(),"utf-8");
-        System.out.println(result);
+        System.out.println("查询海报分类列表 >>> "+result);
 
         JSONObject resultJson = new JSONObject(result);
         int code = resultJson.getInt("code");
@@ -101,21 +102,27 @@ public class MyHttpClientMk {
 
     }
 
-    @Test(priority = 2)
-    public void testX(){
-        System.out.println("这是第1个测试case");
-    }
+//    @Test(priority = 2)
+//    public void testX(){
+//        System.out.println("这是第1个测试case");
+//    }
+//
+//    @Test(priority = 1)
+//    public void testY(){
+//        System.out.println("这是第2个测试case");
+//    }
+//
+//    @Test(priority = 3)
+//    public void testZ(){
+//        System.out.println("这是第3个测试case");
+//    }
 
-    @Test(priority = 1)
-    public void testY(){
-        System.out.println("这是第2个测试case");
-    }
-
-    @Test(priority = 3)
-    public void testZ(){
-        System.out.println("这是第3个测试case");
-    }
-
+    /**
+     * @description 添加海报分类接口
+     * @author BingLi
+     * @version 1.0
+     * @date 2019-12-11
+     */
     @Test(dependsOnMethods = {"testLogin"})
     public void testAddPosterCategory() throws IOException{
 
@@ -126,23 +133,53 @@ public class MyHttpClientMk {
         HttpPost post = new HttpPost(testUrl);
 
         JSONObject param = new JSONObject();
-        param.put("name","测试分类24");
+        param.put("name","测试分类31");
 
         post.setHeader("content-type","application/json");
         post.setHeader("token",token);
-//        post.setHeader("Authorization",token);
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         post.setEntity(entity);
 
         HttpResponse response = client.execute(post);
         String result = EntityUtils.toString(response.getEntity(),"utf-8");
-        System.out.println(result);
+        System.out.println("添加海报分类接口 >>> "+result);
 
         JSONObject resultJson = new JSONObject(result);
         int code = resultJson.getInt("code");
         String msg = resultJson.getString("msg");
+
+        //获取海报分类的categoryId
+        JSONObject params = resultJson.getJSONObject("param");
+        this.categoryId = params.getString("id");
+
         Assert.assertEquals(0,code);
         Assert.assertEquals("成功",msg);
+
+    }
+
+    @Test(dependsOnMethods = {"testAddPosterCategory"})
+    public void testDelPosterCategory() throws IOException{
+
+        String uri = bundle.getString("mk.del.category");
+        String testUrl = this.url+uri+categoryId;
+
+        DefaultHttpClient client = new DefaultHttpClient();
+        HttpPost post = new HttpPost(testUrl);
+
+        post.setHeader("content-type","application/json");
+        post.setHeader("token",token);
+
+        HttpResponse response = client.execute(post);
+        String result = EntityUtils.toString(response.getEntity(),"utf-8");
+        System.out.println("删除海报分类接口 >>> "+result);
+
+        JSONObject resultJson = new JSONObject(result);
+        int code = resultJson.getInt("code");
+        String msg = resultJson.getString("msg");
+        boolean success = resultJson.getBoolean("success");
+        Assert.assertEquals(0,code);
+        Assert.assertEquals("成功",msg);
+        Assert.assertTrue(success);
 
     }
 
