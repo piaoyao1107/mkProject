@@ -133,7 +133,7 @@ public class MyHttpClientMk {
         HttpPost post = new HttpPost(testUrl);
 
         JSONObject param = new JSONObject();
-        param.put("name","测试分类31");
+        param.put("name","测试分类32");
 
         post.setHeader("content-type","application/json");
         post.setHeader("token",token);
@@ -157,6 +157,12 @@ public class MyHttpClientMk {
 
     }
 
+    /**
+     * @description 删除海报分类接口
+     * @author BingLi
+     * @version 1.0
+     * @date 2019-12-11
+     */
     @Test(dependsOnMethods = {"testAddPosterCategory"})
     public void testDelPosterCategory() throws IOException{
 
@@ -180,6 +186,42 @@ public class MyHttpClientMk {
         Assert.assertEquals(0,code);
         Assert.assertEquals("成功",msg);
         Assert.assertTrue(success);
+
+    }
+
+    /**
+     * @description 查询海报列表接口
+     * @author BingLi
+     * @version 1.0
+     * @date 2019-12-11
+     */
+    @Test
+    public void testPosterList() throws IOException{
+
+        String uri = bundle.getString("mk.poster.list");
+        String testUrl = this.url+uri;
+
+        DefaultHttpClient client = new DefaultHttpClient();
+        HttpGet get = new HttpGet(testUrl);
+
+        get.setHeader("content-type","application/json");
+        get.setHeader("token",token);
+
+        HttpResponse response = client.execute(get);
+        String result = EntityUtils.toString(response.getEntity(),"utf-8");
+        System.out.println("查询海报列表接口 >>>"+result);
+
+        JSONObject resultJson = new JSONObject(result);
+        int code = resultJson.getInt("code");
+        String msg = resultJson.getString("msg");
+        Assert.assertEquals(0,code);
+        Assert.assertEquals("成功",msg);
+
+        //获取海报列表信息
+        JSONObject params = resultJson.getJSONObject("param");
+        int totalElements = params.getInt("totalElements");
+        Assert.assertTrue(totalElements>0);
+
 
     }
 

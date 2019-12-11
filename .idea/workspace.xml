@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48254036-5fe6-4f87-a416-8691b04739d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/course/httpclient/demo/MyHttpClientMk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/course/httpclient/demo/MyHttpClientMk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/course/httpclient/demo/MyHttpClientMk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/course/httpclient/demo/MyHttpClientMk.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/course/httpclient/demo/MyHttpClientMk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+            <state relative-caret-position="255">
+              <caret line="196" column="7" lean-forward="true" selection-start-line="196" selection-start-column="7" selection-end-line="196" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -34,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -176,15 +173,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MyHttpClientMk - 2019.12.10 at 19h 51m 46s.xml">
-      <configuration name="MyHttpClientMk" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="MyHttpClientMk - 2019.12.11 at 15h 29m 15s.xml">
-      <configuration name="MyHttpClientMk" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="MyHttpClientMk - 2019.12.11 at 15h 31m 08s.xml">
-      <configuration name="MyHttpClientMk" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="MyHttpClientMk - 2019.12.11 at 15h 49m 55s.xml">
       <configuration name="MyHttpClientMk" configurationId="TestNG" />
     </history-entry>
@@ -204,6 +192,15 @@
       <configuration name="MyHttpClientMk" configurationId="TestNG" />
     </history-entry>
     <history-entry file="MyHttpClientMk - 2019.12.11 at 16h 02m 57s.xml">
+      <configuration name="MyHttpClientMk" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="MyHttpClientMk - 2019.12.11 at 16h 04m 22s.xml">
+      <configuration name="MyHttpClientMk" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="MyHttpClientMk - 2019.12.11 at 16h 22m 35s.xml">
+      <configuration name="MyHttpClientMk" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="MyHttpClientMk - 2019.12.11 at 16h 22m 51s.xml">
       <configuration name="MyHttpClientMk" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -243,15 +240,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/course/httpclient/demo/MyHttpClientMk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+        <state relative-caret-position="255">
+          <caret line="196" column="7" lean-forward="true" selection-start-line="196" selection-start-column="7" selection-end-line="196" selection-end-column="7" />
         </state>
       </provider>
     </entry>
