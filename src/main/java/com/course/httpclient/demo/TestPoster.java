@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class MyHttpClientMk {
+public class TestPoster {
 
     private String url;
     private ResourceBundle bundle;
